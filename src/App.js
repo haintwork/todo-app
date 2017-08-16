@@ -16,7 +16,6 @@ class App extends Component {
     this.setState({
       items: newState.items
     });
-    // defaultState.items.push(todo);
   }
 
   clearAll(){
@@ -45,8 +44,8 @@ class App extends Component {
     return (
       <div>
         <h1>Todo App</h1>
-        <AddTodoForm addTodo={this.addTodo.bind(this)} clearAll={this.clearAll.bind(this)}/>
-        <TodoList todoList={this.state.items} itemClick={this.itemClick.bind(this)} deleteItem={this.deleteItem.bind(this)}/>
+        <AddTodoForm addTodo={(e)=>this.addTodo(e)} clearAll={(e)=>this.clearAll(e)}/>
+        <TodoList todoList={this.state.items} itemClick={(e)=>this.itemClick(e)} deleteItem={(e)=>this.deleteItem(e)}/>
       </div>
     );
   }
